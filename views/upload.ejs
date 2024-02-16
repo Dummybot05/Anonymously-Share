@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymously Share</title>
+    <link rel="stylesheet" href="styles/upload.css" type="text/css"></link>
+  </head>
+  <body>
+    <h1>Anonymously Share</h1>
+    <p class="big">Great Choice - Please upload here</p>
+    <p class="small">Supports only Single File</p>
+    <p class="small">If you Have Multiple files make a zip then upload</p>
+    <form action='/upload' method='post' enctype='multipart/form-data'>
+      <label for="images" class="drop-container" id="dropcontainer">
+        <span class="drop-title">Drop files here</span>
+        or
+        <input type="file" name="myfile" id="images" required>
+      </label>
+      <button type='submit'>Submit</button>
+    </form>  
+  </body>
+</html>

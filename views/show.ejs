@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anonymously Share</title>
+    <link rel="stylesheet" href="/styles/show.css" type="text/css"></link>
+  </head>
+  <body>
+    <h1>Anomously Share</h1>
+    <div class="prev">
+        <%= (item.other.originalname).split('.').pop().toUpperCase() %>
+    </div>
+       <p><b>File Name : </b><%= item.other.filename %></p>
+       <p><b>original Name : </b><%= item.other.originalname %></p>
+       <p><b>Encoding : </b><%= item.other.encoding %></p>
+       <p><b>MIME Type : </b><%= item.other.mimetype %></p>
+       <p><b>Size : </b><%= item.other.size %> Bytes (<%= (item.other.size/1024/1024).toFixed(2) %> MB)</p>
+
+<% const date = new Date(item.expiryDate - (new Date()).getTime()); %>
+<% const hours = date.getUTCHours().toString().padStart(2, '0'); %>
+<% const minutes = date.getUTCMinutes().toString().padStart(2, '0'); %>
+<% const seconds = date.getUTCSeconds().toString().padStart(2, '0'); %>
+<% const millisecondsFormatted = date.getUTCMilliseconds().toString().padStart(3, '0'); %>
+<p><b>Expire in : </b><%= `${hours}:${minutes}:${seconds}` %></p>
+
+    <a href='<%= item.other.filename %>/download'>
+       <button type='submit'>Download</button>
+    </a>
+  </body>
+</html>

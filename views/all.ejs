@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Anonymously Share</title>
+    <link rel="stylesheet" href="styles/all.css" type="text/css"></link>
+  </head>
+  <body>
+    <h1>Anonymously Share</h1>
+    <p>Get Audio's, Video's and All Other File Types Before it gets Expire</p>
+    <div class="container">
+<% data.map((item) => { %>
+      <a href="<%= item.other.filename %>">
+        <div class="others">
+          <div class="imm">
+              <%= (item.other.originalname).split('.').pop().toUpperCase() %>
+          </div>
+          <div class="box1">
+             <b><%= item.other.originalname %></b>
+          </div>
+          <div class="box1 box2">
+            <b>Size</b>: <%= (item.other.size/1024/1024).toFixed(2) %>MB
+          </div>
+          <div class="box1 box3">
+
+<% const date = new Date(item.expiryDate - (new Date()).getTime()); %>
+<% const hours = date.getUTCHours().toString().padStart(2, '0'); %>
+<% const minutes = date.getUTCMinutes().toString().padStart(2, '0'); %>
+<% const seconds = date.getUTCSeconds().toString().padStart(2, '0'); %>
+<% const millisecondsFormatted = date.getUTCMilliseconds().toString().padStart(3, '0'); %>
+<b>Expire</b>: <%= `${hours}:${minutes}:${seconds}` %>
+
+          </div>
+        </div>
+      </a>
+<% }) %>
+    </div>
+  </body>
+</html>

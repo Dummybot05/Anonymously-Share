@@ -1,0 +1,16 @@
+[
+  {
+    "uploadDate": 1708070730666,
+    "expiryDate": 1708157130666,
+    "other": {
+      "fieldname": "myfile",
+      "originalname": "penguin.png",
+      "encoding": "7bit",
+      "mimetype": "image/png",
+      "destination": "public/upload/",
+      "filename": "d64813221b694356aa5b083d94413309",
+      "path": "public/upload/d64813221b694356aa5b083d94413309",
+      "size": 271943
+    }
+  }
+]
